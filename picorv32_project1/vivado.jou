@@ -1,0 +1,17 @@
+#-----------------------------------------------------------
+# Vivado v2022.1 (64-bit)
+# SW Build 3526262 on Mon Apr 18 15:47:01 MDT 2022
+# IP Build 3524634 on Mon Apr 18 20:55:01 MDT 2022
+# Start of session at: Wed Feb 14 19:29:29 2024
+# Process ID: 42926
+# Current directory: /home/tortellini/Xilinx_projects/picorv32_project1
+# Command line: vivado picorv32_project1.xpr
+# Log file: /home/tortellini/Xilinx_projects/picorv32_project1/vivado.log
+# Journal file: /home/tortellini/Xilinx_projects/picorv32_project1/vivado.jou
+# Running On: tortellini-MS-7B98, OS: Linux, CPU Frequency: 5300.000 MHz, CPU Physical cores: 16, Host memory: 33388 MB
+#-----------------------------------------------------------
+start_gui
+open_project picorv32_project1.xpr
+update_compile_order -fileset sources_1
+set_property  ip_repo_paths  /home/tortellini/Xilinx_projects/picorv32_ip [current_project]
+update_ip_catalog

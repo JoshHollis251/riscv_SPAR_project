@@ -1,0 +1,132 @@
+!SESSION 2023-10-05 00:17:51.285 -----------------------------------------------
+eclipse.buildId=2021.2
+java.version=11.0.11
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_US
+Command-line arguments:  -os linux -ws gtk -arch x86_64
+
+!ENTRY org.eclipse.osgi 4 0 2023-10-05 00:17:51.755
+!MESSAGE Bundle reference:file:org.apache.log4j_1.2.15.v201012070815.jar not found.
+
+!ENTRY org.eclipse.osgi 4 0 2023-10-05 00:17:51.786
+!MESSAGE Bundle reference:file:org.slf4j.impl.log4j12_1.7.2.v20131105-2200.jar not found.
+
+!ENTRY org.eclipse.ui 4 4 2023-10-05 00:18:25.212
+!MESSAGE Plug-in 'org.eclipse.ui.editors' contributed an invalid Menu Extension (Path: 'navigate' is invalid): org.eclipse.ui.edit.text.gotoLastEditPosition
+
+!ENTRY com.xilinx.sdk.utils 0 0 2023-10-05 00:18:27.863
+!MESSAGE XSCT Command: [plnx-install-path  ; ::scw::scw_mode gui], Thread: Thread-16
+
+!ENTRY com.xilinx.sdk.utils 0 0 2023-10-05 00:18:27.864
+!MESSAGE XSCT Command: [::hsi::utils::init_repo], Thread: Worker-0: Initializing s/w repositories
+
+!ENTRY com.xilinx.sdk.utils 0 0 2023-10-05 00:18:27.871
+!MESSAGE XSCT Command: [set sdk::sdk_chan tcfchan#0], Thread: Thread-20
+
+!ENTRY com.xilinx.sdk.utils 0 0 2023-10-05 00:18:27.875
+!MESSAGE XSCT command with result: [plnx-install-path  ; ::scw::scw_mode gui], Result: [null, ]. Thread: Thread-16
+
+!ENTRY com.xilinx.sdk.utils 0 0 2023-10-05 00:18:28.183
+!MESSAGE XSCT command with result: [::hsi::utils::init_repo], Result: [null, ]. Thread: Worker-0: Initializing s/w repositories
+
+!ENTRY com.xilinx.sdk.utils 0 0 2023-10-05 00:18:28.184
+!MESSAGE XSCT command with result: [set sdk::sdk_chan tcfchan#0], Result: [null, tcfchan#0]. Thread: Thread-20
+
+!ENTRY com.xilinx.sdk.utils 0 0 2023-10-05 00:18:28.184
+!MESSAGE XSCT Command: [set query_var1 $::env(RDI_DATADIR)], Thread: Worker-0: Initializing s/w repositories
+
+!ENTRY com.xilinx.sdk.utils 0 0 2023-10-05 00:18:28.184
+!MESSAGE XSCT Command: [setws /home/tortellini/Xilinx_projects/picorv32_project1], Thread: Thread-20
+
+!ENTRY com.xilinx.sdk.utils 0 0 2023-10-05 00:18:28.185
+!MESSAGE XSCT command with result: [set query_var1 $::env(RDI_DATADIR)], Result: [null, /tools/Xilinx/Vitis/2022.1/data]. Thread: Worker-0: Initializing s/w repositories
+
+!ENTRY com.xilinx.sdk.utils 0 0 2023-10-05 00:18:28.185
+!MESSAGE XSCT command with result: [setws /home/tortellini/Xilinx_projects/picorv32_project1], Result: [null, ]. Thread: Thread-20
+
+!ENTRY com.xilinx.sdk.utils 1 0 2023-10-05 00:18:42.683
+!MESSAGE Opening file dialog using preferences. Current path: /tools/Xilinx/Vitis/2022.1/data/embeddedsw/lib/fixed_hwplatforms, Local preference: scw_hwspec, Group preference: null
+
+!ENTRY com.xilinx.sdk.utils 0 0 2023-10-05 00:19:01.074
+!MESSAGE XSCT Command: [::hsi::utils::openhw /tmp/hwspec_system_wrapper9796768522005282545/system_wrapper.xsa], Thread: ModalContext
+
+!ENTRY com.xilinx.sdk.utils 0 0 2023-10-05 00:19:01.205
+!MESSAGE XSCT command with result: [::hsi::utils::openhw /tmp/hwspec_system_wrapper9796768522005282545/system_wrapper.xsa], Result: [null, ]. Thread: ModalContext
+
+!ENTRY com.xilinx.sdk.utils 0 0 2023-10-05 00:19:01.211
+!MESSAGE XSCT Command: [::hsi::utils::get_design_properties -json /tmp/hwspec_system_wrapper9796768522005282545/system_wrapper.xsa], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2023-10-05 00:19:01.216
+!MESSAGE XSCT command with result: [::hsi::utils::get_design_properties -json /tmp/hwspec_system_wrapper9796768522005282545/system_wrapper.xsa], Result: [null, {"device": "7a35ti",
+"family": "artix7",
+"timestamp": "Thu Oct  5 00:12:19 2023",
+"vivado_version": "2022.1",
+"part": "xc7a35ticsg324-1L",
+}]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2023-10-05 00:19:01.218
+!MESSAGE XSCT Command: [::hsi::utils::get_all_periphs -json /tmp/hwspec_system_wrapper9796768522005282545/system_wrapper.xsa], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2023-10-05 00:19:01.222
+!MESSAGE XSCT command with result: [::hsi::utils::get_all_periphs -json /tmp/hwspec_system_wrapper9796768522005282545/system_wrapper.xsa], Result: [null, {"axi_bram_ctrl_0": {"hier_name": "axi_bram_ctrl_0",
+"type": "axi_bram_ctrl",
+"version": "4.1",
+"ip_type": "MEMORY_CNTLR",
+},
+"axi_bram_ctrl_0_bram": {"hier_name": "axi_bram_ctrl_0_bram",
+"type": "blk_mem_gen",
+"version": "8.4",
+"ip_type": "MEMORY",
+},
+"axi_gpio_0": {"hier_name": "axi_gpio_0",
+"type": "axi_gpio",
+"version": "2.0",
+"ip_type": "PERIPHERAL",
+},
+"axi_quad_spi_0": {"hier_name": "axi_quad_spi_0",
+"type": "axi_quad_spi",
+"version": "3.2",
+"ip_type": "MEMORY_CNTLR",
+},
+"axi_smc": {"hier_name": "axi_smc",
+"type": "smartconnect",
+"version": "1.0",
+"ip_type": "BUS",
+},
+"axi_uartlite_0": {"hier_name": "axi_uartlite_0",
+"type": "axi_uartlite",
+"version": "2.0",
+"ip_type": "PERIPHERAL",
+},
+"clk_wiz_0": {"hier_name": "clk_wiz_0",
+"type": "clk_wiz",
+"version": "6.0",
+"ip_type": "PERIPHERAL",
+},
+"picorv32_axi_0": {"hier_name": "picorv32_axi_0",
+"type": "picorv32_axi",
+"version": "1.0",
+"ip_type": "PERIPHERAL",
+},
+"proc_sys_reset_0": {"hier_name": "proc_sys_reset_0",
+"type": "proc_sys_reset",
+"version": "5.0",
+"ip_type": "PERIPHERAL",
+},
+"rst_clk_wiz_0_50M": {"hier_name": "rst_clk_wiz_0_50M",
+"type": "proc_sys_reset",
+"version": "5.0",
+"ip_type": "PERIPHERAL",
+},
+"util_vector_logic_0": {"hier_name": "util_vector_logic_0",
+"type": "util_vector_logic",
+"version": "2.0",
+"ip_type": "PERIPHERAL",
+},
+}]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2023-10-05 00:19:47.751
+!MESSAGE XSCT Command: [::hsi::utils::closehw /tmp/hwspec_system_wrapper9796768522005282545/system_wrapper.xsa], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2023-10-05 00:19:47.754
+!MESSAGE XSCT command with result: [::hsi::utils::closehw /tmp/hwspec_system_wrapper9796768522005282545/system_wrapper.xsa], Result: [null, ]. Thread: main
