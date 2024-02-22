@@ -182,7 +182,7 @@
         "inst_hier_path": "axi_bram_ctrl_0_bram",
         "parameters": {
           "Coe_File": {
-            "value": "../../../../../../helloworld/build/test2.coe"
+            "value": "../../../../../../helloworld/build/test.coe"
           },
           "Load_Init_File": {
             "value": "true"
