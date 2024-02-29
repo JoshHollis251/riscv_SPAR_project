@@ -122,7 +122,9 @@ start_step init_design
 set ACTIVE_STEP init_design
 set rc [catch {
   create_msg_db init_design.pb
-  set_param chipscope.maxJobs 1
+  set_param tcl.collectionResultDisplayLimit 0
+  set_param xicom.use_bs_reader 1
+  set_param chipscope.maxJobs 2
 OPTRACE "create in-memory project" START { }
   create_project -in_memory -part xc7a35ticsg324-1L
   set_property board_part digilentinc.com:arty-a7-35:part0:1.1 [current_project]
@@ -132,7 +134,10 @@ OPTRACE "create in-memory project" END { }
 OPTRACE "set parameters" START { }
   set_property webtalk.parent_dir /home/tortellini/Xilinx_projects/picorv32_project1/picorv32_project1.cache/wt [current_project]
   set_property parent.project_path /home/tortellini/Xilinx_projects/picorv32_project1/picorv32_project1.xpr [current_project]
-  set_property ip_repo_paths /home/tortellini/Xilinx_projects/picorv32_ip [current_project]
+  set_property ip_repo_paths {
+  /home/tortellini/Xilinx_projects/picorv32_ip
+  /home/tortellini/Xilinx_projects/ip_repo/axi_adder_1.0
+} [current_project]
   update_ip_catalog
   set_property ip_output_repo /home/tortellini/Xilinx_projects/picorv32_project1/picorv32_project1.cache/ip [current_project]
   set_property ip_cache_permissions {read write} [current_project]

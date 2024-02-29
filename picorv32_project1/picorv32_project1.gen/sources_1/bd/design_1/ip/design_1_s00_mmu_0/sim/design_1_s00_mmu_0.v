@@ -1,4 +1,4 @@
-// (c) Copyright 1995-2023 Xilinx, Inc. All rights reserved.
+// (c) Copyright 1995-2024 Xilinx, Inc. All rights reserved.
 // 
 // This file contains confidential and proprietary information
 // of Xilinx, Inc. and is protected under U.S. and
@@ -304,9 +304,9 @@ output wire m_axi_rready;
     .C_AXI_WUSER_WIDTH(1),
     .C_AXI_RUSER_WIDTH(1),
     .C_AXI_BUSER_WIDTH(1),
-    .C_NUM_RANGES(4),
-    .C_BASE_ADDR(256'H00000000c0000000000000004060000000000000200000000000000000100000),
-    .C_RANGE_SIZE(128'H0000000d000000100000001000000011),
+    .C_NUM_RANGES(5),
+    .C_BASE_ADDR(320'H00000000c00000000000000044a00000000000004060000000000000200000000000000000100000),
+    .C_RANGE_SIZE(160'H0000000d00000010000000100000001000000011),
     .C_USES_DEST(0),
     .C_DEST_WIDTH(1),
     .C_DEST(64'H0000000000000000),
@@ -314,8 +314,8 @@ output wire m_axi_rready;
     .C_PREFIX(64'H0000000000000000),
     .C_S_AXI_SUPPORTS_WRITE(1),
     .C_S_AXI_SUPPORTS_READ(1),
-    .C_M_AXI_SUPPORTS_WRITE(4'B1111),
-    .C_M_AXI_SUPPORTS_READ(4'B1111)
+    .C_M_AXI_SUPPORTS_WRITE(5'B11111),
+    .C_M_AXI_SUPPORTS_READ(5'B11111)
   ) inst (
     .aclk(aclk),
     .aresetn(aresetn),

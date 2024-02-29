@@ -1,8 +1,8 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2022.1 (lin64) Build 3526262 Mon Apr 18 15:47:01 MDT 2022
-| Date         : Sat Dec 23 21:21:37 2023
-| Host         : tortellini-MS-7B98 running 64-bit Ubuntu 22.04.3 LTS
+| Date         : Wed Feb 28 23:31:04 2024
+| Host         : tortellini-MS-7B98 running 64-bit Ubuntu 22.04.4 LTS
 | Command      : report_utilization -file design_1_wrapper_utilization_synth.rpt -pb design_1_wrapper_utilization_synth.pb
 | Design       : design_1_wrapper
 | Device       : xc7a35ticsg324-1L
@@ -31,13 +31,13 @@ Table of Contents
 +----------------------------+-------+-------+------------+-----------+-------+
 |          Site Type         |  Used | Fixed | Prohibited | Available | Util% |
 +----------------------------+-------+-------+------------+-----------+-------+
-| Slice LUTs*                |  8664 |     0 |          0 |     20800 | 41.65 |
-|   LUT as Logic             |  7029 |     0 |          0 |     20800 | 33.79 |
-|   LUT as Memory            |  1635 |     0 |          0 |      9600 | 17.03 |
+| Slice LUTs*                |  9295 |     0 |          0 |     20800 | 44.69 |
+|   LUT as Logic             |  7612 |     0 |          0 |     20800 | 36.60 |
+|   LUT as Memory            |  1683 |     0 |          0 |      9600 | 17.53 |
 |     LUT as Distributed RAM |   352 |     0 |            |           |       |
-|     LUT as Shift Register  |  1283 |     0 |            |           |       |
-| Slice Registers            | 11120 |     0 |          0 |     41600 | 26.73 |
-|   Register as Flip Flop    | 11120 |     0 |          0 |     41600 | 26.73 |
+|     LUT as Shift Register  |  1331 |     0 |            |           |       |
+| Slice Registers            | 11703 |     0 |          0 |     41600 | 28.13 |
+|   Register as Flip Flop    | 11703 |     0 |          0 |     41600 | 28.13 |
 |   Register as Latch        |     0 |     0 |          0 |     41600 |  0.00 |
 | F7 Muxes                   |   297 |     0 |          0 |     16300 |  1.82 |
 | F8 Muxes                   |     3 |     0 |          0 |      8150 |  0.04 |
@@ -59,8 +59,8 @@ Table of Contents
 | 0     |          Yes |           - |            - |
 | 0     |          Yes |           - |          Set |
 | 0     |          Yes |           - |        Reset |
-| 138   |          Yes |         Set |            - |
-| 10982 |          Yes |       Reset |            - |
+| 157   |          Yes |         Set |            - |
+| 11546 |          Yes |       Reset |            - |
 +-------+--------------+-------------+--------------+
 
 
@@ -151,19 +151,19 @@ Table of Contents
 +------------+-------+---------------------+
 |  Ref Name  |  Used | Functional Category |
 +------------+-------+---------------------+
-| FDRE       | 10982 |        Flop & Latch |
-| LUT6       |  3562 |                 LUT |
-| LUT4       |  1430 |                 LUT |
-| LUT3       |  1283 |                 LUT |
-| SRL16E     |  1134 |  Distributed Memory |
-| LUT5       |  1099 |                 LUT |
-| SRLC32E    |  1071 |  Distributed Memory |
-| LUT2       |   696 |                 LUT |
-| CARRY4     |   428 |          CarryLogic |
+| FDRE       | 11546 |        Flop & Latch |
+| LUT6       |  3715 |                 LUT |
+| LUT3       |  1531 |                 LUT |
+| LUT4       |  1491 |                 LUT |
+| LUT5       |  1257 |                 LUT |
+| SRL16E     |  1144 |  Distributed Memory |
+| SRLC32E    |  1109 |  Distributed Memory |
+| LUT2       |   787 |                 LUT |
+| CARRY4     |   449 |          CarryLogic |
 | RAMD64E    |   304 |  Distributed Memory |
 | MUXF7      |   297 |               MuxFx |
-| LUT1       |   174 |                 LUT |
-| FDSE       |   138 |        Flop & Latch |
+| LUT1       |   184 |                 LUT |
+| FDSE       |   157 |        Flop & Latch |
 | RAMD32     |    68 |  Distributed Memory |
 | RAMB36E1   |    39 |        Block Memory |
 | RAMS32     |    20 |  Distributed Memory |

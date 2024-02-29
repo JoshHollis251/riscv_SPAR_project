@@ -70,7 +70,9 @@ proc create_report { reportName command } {
   }
 }
 OPTRACE "synth_1" START { ROLLUP_AUTO }
-set_param chipscope.maxJobs 1
+set_param tcl.collectionResultDisplayLimit 0
+set_param xicom.use_bs_reader 1
+set_param chipscope.maxJobs 2
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7a35ticsg324-1L
 
@@ -84,7 +86,10 @@ set_property XPM_LIBRARIES {XPM_CDC XPM_MEMORY} [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
 set_property board_part digilentinc.com:arty-a7-35:part0:1.1 [current_project]
-set_property ip_repo_paths /home/tortellini/Xilinx_projects/picorv32_ip [current_project]
+set_property ip_repo_paths {
+  /home/tortellini/Xilinx_projects/picorv32_ip
+  /home/tortellini/Xilinx_projects/ip_repo/axi_adder_1.0
+} [current_project]
 update_ip_catalog
 set_property ip_output_repo /home/tortellini/Xilinx_projects/picorv32_project1/picorv32_project1.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
@@ -115,9 +120,10 @@ set_property used_in_implementation false [get_files -all /home/tortellini/Xilin
 set_property used_in_implementation false [get_files -all /home/tortellini/Xilinx_projects/picorv32_project1/picorv32_project1.gen/sources_1/bd/design_1/ip/design_1_system_ila_0_0/bd_0/bd_f60c_ooc.xdc]
 set_property used_in_implementation false [get_files -all /home/tortellini/Xilinx_projects/picorv32_project1/picorv32_project1.gen/sources_1/bd/design_1/ip/design_1_system_ila_0_0/design_1_system_ila_0_0_ooc.xdc]
 set_property used_in_implementation false [get_files -all /home/tortellini/Xilinx_projects/picorv32_project1/picorv32_project1.gen/sources_1/bd/design_1/ip/design_1_blk_mem_gen_0_0/design_1_blk_mem_gen_0_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all /home/tortellini/Xilinx_projects/picorv32_project1/picorv32_project1.gen/sources_1/bd/design_1/ip/design_1_auto_pc_2/design_1_auto_pc_2_ooc.xdc]
+set_property used_in_implementation false [get_files -all /home/tortellini/Xilinx_projects/picorv32_project1/picorv32_project1.gen/sources_1/bd/design_1/ip/design_1_auto_pc_3/design_1_auto_pc_3_ooc.xdc]
 set_property used_in_implementation false [get_files -all /home/tortellini/Xilinx_projects/picorv32_project1/picorv32_project1.gen/sources_1/bd/design_1/ip/design_1_auto_pc_0/design_1_auto_pc_0_ooc.xdc]
 set_property used_in_implementation false [get_files -all /home/tortellini/Xilinx_projects/picorv32_project1/picorv32_project1.gen/sources_1/bd/design_1/ip/design_1_auto_pc_1/design_1_auto_pc_1_ooc.xdc]
+set_property used_in_implementation false [get_files -all /home/tortellini/Xilinx_projects/picorv32_project1/picorv32_project1.gen/sources_1/bd/design_1/ip/design_1_auto_pc_2/design_1_auto_pc_2_ooc.xdc]
 set_property used_in_implementation false [get_files -all /home/tortellini/Xilinx_projects/picorv32_project1/picorv32_project1.gen/sources_1/bd/design_1/design_1_ooc.xdc]
 
 OPTRACE "Adding files" END { }
