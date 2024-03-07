@@ -14,6 +14,7 @@
 #define AXI_GPIO_BASE_ADDR 0x20000000
 #define AXI_GPIO_REG ((unsigned *) AXI_GPIO_BASE_ADDR)
 
+int itoa(int num, char* str, int buffSize);
 void Xil_Out32(unsigned *Addr, unsigned int Value);
 unsigned int Xil_In32(unsigned *Addr);
 void adder(unsigned int a, unsigned int b, unsigned int cin, unsigned int *cout, unsigned int *s);
@@ -44,12 +45,13 @@ int main() {
 
 // Function to write to a memory-mapped register
 void Xil_Out32(unsigned *Addr, unsigned int Value) {
-    *Addr = Value;
+    volatile unsigned *LocalAddr = (volatile unsigned *)Addr;
+	*LocalAddr = Value;
 }
 
 // Function to read from a memory-mapped register
 unsigned int Xil_In32(unsigned *Addr) {
-    return *Addr;
+    return *(volatile unsigned *) Addr;
 }
 
 void uart_write_byte(char byte) {
@@ -67,7 +69,7 @@ void uart_write_byte(char byte) {
 void adder(unsigned int a, unsigned int b, unsigned int cin, unsigned int *cout, unsigned int *s) {
     Xil_Out32((unsigned *) AXI_ADDER_BASE_ADDR, a);
     Xil_Out32((unsigned *) (AXI_ADDER_BASE_ADDR + B_OFFSET), b);
-    Xil_Out32((unsigned *) (AXI_ADDER_BASE_ADDR + CIN_O.FFSET), cin);
+    Xil_Out32((unsigned *) (AXI_ADDER_BASE_ADDR + CIN_OFFSET), cin);
     *cout = Xil_In32((unsigned *) (AXI_ADDER_BASE_ADDR + COUT_OFFSET));
     *s = Xil_In32((unsigned *) (AXI_ADDER_BASE_ADDR + S_OFFSET));
 }

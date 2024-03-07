@@ -70,9 +70,6 @@ proc create_report { reportName command } {
   }
 }
 OPTRACE "synth_1" START { ROLLUP_AUTO }
-set_param tcl.collectionResultDisplayLimit 0
-set_param xicom.use_bs_reader 1
-set_param chipscope.maxJobs 2
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7a35ticsg324-1L
 
@@ -95,7 +92,7 @@ set_property ip_output_repo /home/tortellini/Xilinx_projects/picorv32_project1/p
 set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
-add_files /home/tortellini/Xilinx_projects/picorv32_project1/helloworld/build/test2.coe
+add_files /home/tortellini/Xilinx_projects/picorv32_project1/helloworld/build/test.coe
 read_verilog -library xil_defaultlib /home/tortellini/Xilinx_projects/picorv32_project1/picorv32_project1.gen/sources_1/bd/design_1/hdl/design_1_wrapper.v
 add_files /home/tortellini/Xilinx_projects/picorv32_project1/picorv32_project1.srcs/sources_1/bd/design_1/design_1.bd
 set_property used_in_implementation false [get_files -all /home/tortellini/Xilinx_projects/picorv32_project1/picorv32_project1.gen/sources_1/bd/design_1/ip/design_1_clk_wiz_0_0/design_1_clk_wiz_0_0_board.xdc]
