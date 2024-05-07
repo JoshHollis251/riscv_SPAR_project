@@ -10,34 +10,12 @@
 # when this script was generated. In order to re-create the project, please source this
 # file in the Vivado Tcl Shell.
 #
-# * Note that the runs in the created project will be configured the same way as the
-#   original project, however they will not be launched automatically. To regenerate the
-#   run results please launch the synthesis/implementation runs as needed.
-#
-#*****************************************************************************************
-# NOTE: In order to use this script for source control purposes, please make sure that the
-#       following files are added to the source control system:-
-#
-# 1. This project restoration tcl script (picorv32_project1_7.tcl) that was generated.
-#
-# 2. The following source(s) files that were local or imported into the original project.
-#    (Please see the '$orig_proj_dir' and '$origin_dir' variable setting below at the start of the script)
-#
-#    "/home/tortellini/Xilinx_projects/riscv_SPAR_project/picorv32_project1/picorv32_project1.srcs/sources_1/bd/design_1/design_1.bd"
-#    "/home/tortellini/Xilinx_projects/riscv_SPAR_project/picorv32_project1/helloworld/build/test.coe"
-#
-# 3. The following remote source files that were added to the original project:-
-#
-#    <none>
-#
-#*****************************************************************************************
 
 # Check file required for this script exists
 proc checkRequiredFiles { origin_dir} {
   set status true
   set files [list \
  "[file normalize "$origin_dir/sources/bd/design_1.bd"]"\
- "[file normalize "$origin_dir/test_programs/build/test.coe"]"\
   ]
   foreach ifile $files {
     if { ![file isfile $ifile] } {
@@ -186,7 +164,6 @@ set obj [get_filesets sources_1]
 # Import local files from the original project
 set files [list \
  [file normalize "${origin_dir}/sources/bd/design_1.bd" ]\
- [file normalize "${origin_dir}/test_programs/build/test.coe" ]\
 ]
 set imported_files [import_files -fileset sources_1 $files]
 #debug print imported files

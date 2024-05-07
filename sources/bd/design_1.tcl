@@ -228,9 +228,8 @@ proc create_root_design { parentCell } {
   # Create instance: axi_bram_ctrl_0_bram, and set properties
   set axi_bram_ctrl_0_bram [ create_bd_cell -type ip -vlnv xilinx.com:ip:blk_mem_gen:8.4 axi_bram_ctrl_0_bram ]
   set_property -dict [ list \
-   CONFIG.Coe_File {/home/tortellini/Xilinx_projects/picorv32_project1/helloworld/build/test.coe} \
    CONFIG.Enable_B {Always_Enabled} \
-   CONFIG.Load_Init_File {true} \
+   CONFIG.Load_Init_File {false} \
    CONFIG.Memory_Type {Single_Port_ROM} \
    CONFIG.Port_A_Write_Rate {0} \
    CONFIG.Port_B_Clock {0} \
