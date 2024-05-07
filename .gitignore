@@ -1,0 +1,10 @@
+#we only want to include sources/, test_programs/, ip_repo/ and everything in parent directory
+*
+
+!picorv32_project.tcl
+!README.md
+!.gitignore
+
+!ip_repo/
+!sources/
+!test_programs/
