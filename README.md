@@ -21,4 +21,4 @@ Finally, the Makefile utilizes all of the aforementioned files to generate a coe
 ## Usage
 By using a 3rd party microprocessor, we lose access to a lot of the tools vivado provides. This includes standard C libraries and build tools. The build tools created in this project have been sufficient for small test programs however, they may require changes to be used for larger programs. The standard C libraries and xilinx libraries are not available for this design. If you wish to use one of those functions, you must implement it yourself. However, a basic print function that sends data over the UART has been included for debugging purposes.
 
-the usage of the Makefile is "make SRC=<filename>". Do not include the file extension in the argument 
+the usage of the Makefile is `make SRC=<filename>`. Do not include the file extension in the argument 
