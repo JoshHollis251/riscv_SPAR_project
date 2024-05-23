@@ -7,7 +7,10 @@ To generate the coefficient file, a series of build tools as well as test progra
 binToCoe.py is a small python script that will convert a .bin file to the .coe format so it can be used by the vivado project. 
 
 Finally, the Makefile utilizes all of the aforementioned files to generate a coefficient file from a C program. 
+## Dependencies
+In order to compile programs to be run on the picorv32 processor, you must install the official risc-V toolchain from the following github link `https://github.com/riscv-collab/riscv-gnu-toolchain`
 
+follow instructions in their readme to install the **32-bit** version of the toolchain
 ## Installation
 1. ensure you have Vivado 2022.1 installed. If you know what you are doing, feel free to use a different version.
 2. clone this git repository onto your local machine
