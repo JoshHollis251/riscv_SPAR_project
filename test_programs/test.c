@@ -16,11 +16,11 @@
 #define AXI_GPIO_BASE_ADDR 0x20000000
 #define AXI_GPIO_REG ((unsigned *) AXI_GPIO_BASE_ADDR)
 
-int itoa(int num, char* str, int buffSize);
 void Xil_Out32(unsigned *Addr, unsigned int Value);
 unsigned int Xil_In32(unsigned *Addr);
 void adder(unsigned int a, unsigned int b, unsigned int *s);
 void uart_write_byte(char byte);
+void uart_print(const char *message);
 void Delay(unsigned int delay);
 
 int main() {
@@ -33,9 +33,7 @@ int main() {
     while (1)
     {
         Xil_Out32(AXI_GPIO_REG + 1, 0x0);
-        for (int i = 0; message[i] != '\0'; ++i) {
-            uart_write_byte(message[i]);
-        }
+        uart_print(message);
         adder(val1, val2, &s);
         val1 = s < 15 || s == 0 ? s : 0;
     	Xil_Out32(AXI_GPIO_REG, val1);
@@ -67,11 +65,15 @@ void uart_write_byte(char byte) {
     *tx_fifo = byte;
 }
 
-void adder(unsigned int a, unsigned int b, unsigned int *s) {
-    const char *message = "entering adder...";
+void uart_print(const char *message) {
     for (int i = 0; message[i] != '\0'; ++i) {
         uart_write_byte(message[i]);
     }
+}
+
+void adder(unsigned int a, unsigned int b, unsigned int *s) {
+    const char *message = "entering adder...";
+    uart_print(message);
     Xil_Out32((unsigned *) AXI_ADDER_BASE_ADDR, a);
     Xil_Out32((unsigned *) (AXI_ADDER_BASE_ADDR + B_OFFSET), b);
     *s = Xil_In32((unsigned *) (AXI_ADDER_BASE_ADDR + S_OFFSET));

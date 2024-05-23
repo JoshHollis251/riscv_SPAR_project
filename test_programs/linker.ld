@@ -17,10 +17,6 @@ SECTIONS
     {
         KEEP(*(.init))
     } > ROM
-    .text.startup : ALIGN(4K)
-    {
-        *(.text.startup)
-    } > ROM
 
     .text : ALIGN(4K)
     {
