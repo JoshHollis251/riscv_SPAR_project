@@ -1,13 +1,20 @@
-## Description 
-this project was used to test the functionality of the picorv32 risc-v microprocessor. This project provides a script to build a vivado 2022.1 project that contains the picorv32 processor connected via axi to a UART, GPIO, and a custom IP. The project also includes two BRAM controllers. The single port BRAM is used as a ROM that is initialized with a coefficient file. The coefficient file is the compiled form of a C program. The dual port BRAM is used as a standard RAM. 
+# PicoRV32 RISC-V Microprocessor Project
 
-To generate the coefficient file, a series of build tools as well as test programs has been provided. Start.S is used to initialize the stack before the main program is run. the linker script defines the address location of the RAM and the ROM and allocates each section accordingly. 
->[!NOTE] 
-> If you change the address locations of the RAM and the ROM in the vivado project, you will need to manually change them in the linker script accordingly
-binToCoe.py is a small python script that will convert a .bin file to the .coe format so it can be used by the vivado project. 
+This project tests the functionality of the PicoRV32 RISC-V microprocessor. It provides a script to build a Vivado 2022.1 project containing the PicoRV32 processor connected via AXI to a UART, GPIO, and custom IP. The project also includes two BRAM controllers. The single-port BRAM is used as a ROM initialized with a coefficient file, which is the compiled form of a C program. The dual-port BRAM is used as standard RAM.
 
-Finally, the Makefile utilizes all of the aforementioned files to generate a coefficient file from a C program. 
+To generate the coefficient file, a series of build tools as well as test programs has been provided. 
+- **Start.S** is used to initialize the stack before the main program is run. 
+- **linker.ld** defines the address location of the RAM and the ROM and allocates each section accordingly. If the address of the ROM or RAM change, ensure you update here aswell
+- **binToCoe.py** is a small python script that will convert a .bin file to the .coe format so it can be used by the vivado project. 
+- **The Makefile** utilizes all of the aforementioned files to generate a coefficient or .coe file from a C program. 
 
+## Test Program
+A test program test.c is provided. This program is a simple LED counter that utilizes all of the components of the SoC. This includes writing messages through the UART, sending data to the GPIO, and performing addition using a custom IP. This test program has already been compiled and the build files are located in the build directory.  
+
+## Dependencies
+In order to compile programs to be run on the picorv32 processor, you must install the official risc-V toolchain from the following github link `https://github.com/riscv-collab/riscv-gnu-toolchain`
+
+follow instructions in their readme to install the **32-bit** version of the toolchain
 ## Installation
 1. ensure you have Vivado 2022.1 installed. If you know what you are doing, feel free to use a different version.
 2. clone this git repository onto your local machine
