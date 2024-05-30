@@ -1,5 +1,5 @@
 TOOLCHAIN := riscv32-unknown-elf-
-CFLAGS := -march=rv32im -mabi=ilp32 -c
+CFLAGS := -march=rv32im -mabi=ilp32 -c -Iinclude
 LFLAGS := -march=rv32im -mabi=ilp32 -ffreestanding -nostdlib -T linker.ld
 
 BUILD_DIR := build
@@ -26,7 +26,6 @@ all: directories $(ELF_NAME) $(ASM_NAME) $(COE_NAME)
 
 directories:
 	@mkdir -p $(BUILD_DIR)
-	@mkdir -p $(BUILD_DIR)/$(LIB_DIR)
 
 $(OBJ_NAME): $(MAIN_SRC)
 	@echo "Compiling $(MAIN_SRC)"

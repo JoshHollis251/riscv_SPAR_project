@@ -6,5 +6,8 @@
 !.gitignore
 
 !ip_repo/
+!ip_repo/**
 !sources/
+!sources/**
 !test_programs/
+!test_programs/**
