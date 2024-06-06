@@ -1,4 +1,3 @@
-//implement itoa in C no library function
 #include "../include/utilities.h"
 #include "../include/parameters.h"
 
